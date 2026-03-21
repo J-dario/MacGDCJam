@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b08tic88yythe"]
+
+[ext_resource type="PackedScene" uid="uid://bhpvs5jhcjhg" path="res://3DObjects/coffee.tscn" id="1_mtvav"]
+[ext_resource type="Texture2D" uid="uid://bekwhgtyr6flb" path="res://3DObjects/Raws/Poliigon_WoodVeneerOak_7760_BaseColor.jpg" id="2_1pkq2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mtvav"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_1pkq2"]
+sky_material = SubResource("ProceduralSkyMaterial_mtvav")
+
+[sub_resource type="Environment" id="Environment_v3g5v"]
+background_mode = 2
+background_color = Color(0.1735264, 0.00025502077, 0.2779527, 1)
+sky = SubResource("Sky_1pkq2")
+tonemap_mode = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3g5v"]
+albedo_texture = ExtResource("2_1pkq2")
+
+[node name="Restaurant" type="Node3D" unique_id=847933197]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=710540283]
+environment = SubResource("Environment_v3g5v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=193948050]
+transform = Transform3D(-0.9396927, 0.29619813, -0.17100997, 5.5810975e-08, 0.4999999, 0.8660255, 0.3420201, 0.8137978, -0.46984625, 0, 10, 3.6000001)
+light_energy = 0.0
+shadow_enabled = true
+sky_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=339772763]
+transform = Transform3D(1, 0, 0, 0, 0.6427877, 0.76604444, 0, -0.76604444, 0.6427877, -3.3000002, 6.1, 14)
+
+[node name="coffee" parent="." unique_id=1351446101 instance=ExtResource("1_mtvav")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="coffee2" parent="." unique_id=1085638098 instance=ExtResource("1_mtvav")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -29.9, 0, -0.8999996)
+
+[node name="coffee3" parent="." unique_id=1361009674 instance=ExtResource("1_mtvav")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 29.9, 0, -0.8999996)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1277779586]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 3.5, 0, -30.8, 0.349998)
+material_override = SubResource("StandardMaterial3D_v3g5v")
+size = Vector3(80, 0.6, 214.6)
