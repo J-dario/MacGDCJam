@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dbwvcfa557cep"]
+
+[ext_resource type="Texture2D" uid="uid://drqmg1mvp5nc2" path="res://SUIT.png" id="1_e6pfm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fmhm"]
+transparency = 4
+albedo_texture = ExtResource("1_e6pfm")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4xvvu"]
+material = SubResource("StandardMaterial3D_7fmhm")
+size = Vector2(22, 12)
+
+[node name="Schro" type="Node3D" unique_id=1162033211]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=783271860]
+transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("QuadMesh_4xvvu")

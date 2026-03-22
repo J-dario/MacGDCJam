@@ -88,7 +88,7 @@ libraries/ = SubResource("AnimationLibrary_gs7y8")
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=117191024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 4.1, 0.19999999)
 light_color = Color(1, 0.6431373, 0.14117648, 1)
-light_energy = 2.0
+light_energy = 4.0
 shadow_enabled = true
 omni_range = 25.0
 

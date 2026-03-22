@@ -574,6 +574,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -1.4000001, 2.4999998)
 
 [node name="wooden stool" parent="." unique_id=1259189164 instance=ExtResource("4_7jg7l")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.8, -9.699999, -10.100002)
-
-[node name="wooden stool2" parent="." unique_id=1691182383 instance=ExtResource("4_7jg7l")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.8, -9.699999, 13.399998)
