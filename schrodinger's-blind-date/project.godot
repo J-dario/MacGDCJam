@@ -13,7 +13,6 @@ config_version=5
 config/name="Schrodinger's Blind Date"
 run/main_scene="uid://b08tic88yythe"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 

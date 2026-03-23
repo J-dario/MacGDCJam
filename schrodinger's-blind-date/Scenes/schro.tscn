@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dbwvcfa557cep"]
 
-[ext_resource type="Texture2D" uid="uid://drqmg1mvp5nc2" path="res://SUIT.png" id="1_e6pfm"]
+[ext_resource type="Texture2D" uid="uid://drqmg1mvp5nc2" path="res://2DResources/SUIT.png" id="1_e6pfm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fmhm"]
 transparency = 4
