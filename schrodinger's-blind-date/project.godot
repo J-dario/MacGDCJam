@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Schrodinger's Blind Date"
-run/main_scene="uid://b08tic88yythe"
+run/main_scene="uid://kqs45ctfpnyf"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [display]

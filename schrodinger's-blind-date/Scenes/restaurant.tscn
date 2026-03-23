@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bhpvs5jhcjhg" path="res://3DObjects/coffee.tscn" id="3_62x4v"]
 [ext_resource type="PackedScene" uid="uid://dbwvcfa557cep" path="res://Scenes/schro.tscn" id="4_xwk5a"]
 [ext_resource type="Script" uid="uid://cmvntljrlafv0" path="res://Scripts/camera.gd" id="5_uq202"]
-[ext_resource type="FontFile" uid="uid://dhmcalwcnfnla" path="res://2DResources/Jersey10-Regular.ttf" id="6_t8yb2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mtvav"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,67 +23,6 @@ albedo_texture = ExtResource("1_7g0bs")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1hja"]
 albedo_texture = ExtResource("2_euvhj")
-
-[sub_resource type="Animation" id="Animation_fb16x"]
-resource_name = "Intro"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FadeIn:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FadeIn:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.46666667, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_i0tqs"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath("FadeIn:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FadeIn:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_s0jpr"]
-_data = {
-&"Intro": SubResource("Animation_fb16x"),
-&"RESET": SubResource("Animation_i0tqs")
-}
 
 [node name="Restaurant" type="Node3D" unique_id=847933197]
 
@@ -126,26 +64,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9753861, 0.7743988, -7.209
 [node name="Camera3D" type="Camera3D" parent="." unique_id=339772763]
 transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.6427876, 0, -0.6427876, 0.7660445, -2.7000003, 6.1, 14)
 script = ExtResource("5_uq202")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=646720343]
-offset_top = 491.0
-offset_right = 960.0
-offset_bottom = 540.0
-theme_override_fonts/normal_font = ExtResource("6_t8yb2")
-theme_override_font_sizes/normal_font_size = 23
-bbcode_enabled = true
-text = "Hi! This is the stupid chungus burger"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=734358796]
-libraries/ = SubResource("AnimationLibrary_s0jpr")
-autoplay = &"Intro"
-
-[node name="FadeIn" type="ColorRect" parent="." unique_id=27980090]
-modulate = Color(1, 1, 1, 0)
-offset_left = -11.0
-offset_top = -5.0
-offset_right = 974.0
-offset_bottom = 550.0
-color = Color(0, 0, 0, 1)

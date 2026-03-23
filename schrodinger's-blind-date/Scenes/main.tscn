@@ -1,0 +1,252 @@
+[gd_scene format=3 uid="uid://o4p3bjwyo7r2"]
+
+[ext_resource type="Script" uid="uid://1wwi0keoaqau" path="res://Scripts/main.gd" id="1_21xkr"]
+[ext_resource type="PackedScene" uid="uid://b08tic88yythe" path="res://Scenes/restaurant.tscn" id="2_6bp64"]
+[ext_resource type="AudioStream" uid="uid://tbq156e1d4vw" path="res://Audios/junipersona-walking-in-the-rain-153030 (1).mp3" id="2_344ge"]
+[ext_resource type="FontFile" uid="uid://dhmcalwcnfnla" path="res://2DResources/Jersey10-Regular.ttf" id="3_344ge"]
+[ext_resource type="Shader" uid="uid://da55k7f204jhi" path="res://2DResources/ditherShader.tres" id="4_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://dy88ysa4nfym2" path="res://Scenes/splitParticles.tscn" id="5_hptm8"]
+[ext_resource type="Shader" uid="uid://ci7eausy8u700" path="res://2DResources/glassShardShader.tres" id="6_d1ilt"]
+
+[sub_resource type="Animation" id="Animation_fb16x"]
+resource_name = "FadeFromBlack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeIn:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.46666667, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6bp64"]
+resource_name = "FadeToBlack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeIn:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeIn:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.46666667, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i0tqs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("FadeIn:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeIn:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rsiac"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Glass:material:shader_parameter/fall_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Choices/HBoxContainer/SubViewportContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Choices/HBoxContainer/SubViewportContainer2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rsiac"]
+_data = {
+&"FadeFromBlack": SubResource("Animation_fb16x"),
+&"FadeToBlack": SubResource("Animation_6bp64"),
+&"RESET": SubResource("Animation_i0tqs"),
+&"fall": SubResource("Animation_rsiac")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3bmuq"]
+shader = ExtResource("4_ynf5e")
+shader_parameter/step_posterize = 20
+shader_parameter/step_pixelated = 720
+shader_parameter/color_A = Color(0.79199934, 0.79199904, 0.7919988, 1)
+shader_parameter/color_B = Color(0.1, 0.1, 0.1, 1)
+shader_parameter/dithering_bayer = false
+shader_parameter/animated_dithering = false
+shader_parameter/smooth_animate = false
+shader_parameter/interval = 0.10000000149012
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nn7w8"]
+shader = ExtResource("6_d1ilt")
+shader_parameter/fall_progress = 0.0
+shader_parameter/pieces_x = 5
+shader_parameter/pieces_y = 3
+shader_parameter/gravity = 2.2
+shader_parameter/scatter = 0.22
+shader_parameter/rotation_amount = 1.0
+shader_parameter/point_jitter = 0.34
+shader_parameter/delay_variation = 0.28
+shader_parameter/edge_thickness = 0.01
+shader_parameter/edge_brightness = 0.35
+shader_parameter/alpha_fade = 0.0
+
+[node name="Main" type="Node3D" unique_id=1421159067]
+script = ExtResource("1_21xkr")
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=1957868439]
+stream = ExtResource("2_344ge")
+volume_db = -20.0
+autoplay = true
+
+[node name="Subtitles" type="RichTextLabel" parent="." unique_id=811096282]
+z_index = 1
+offset_top = 491.0
+offset_right = 960.0
+offset_bottom = 540.0
+theme_override_fonts/normal_font = ExtResource("3_344ge")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Voice" type="AudioStreamPlayer2D" parent="." unique_id=1610614117]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1162518477]
+libraries/ = SubResource("AnimationLibrary_rsiac")
+
+[node name="MainScene" type="Node" parent="." unique_id=465686493]
+
+[node name="Restaurant" parent="MainScene" unique_id=847933197 instance=ExtResource("2_6bp64")]
+
+[node name="Choices" type="Node" parent="." unique_id=1608099819]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Choices" unique_id=1109411500]
+offset_right = 960.0
+offset_bottom = 540.0
+theme_override_constants/separation = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Choices/HBoxContainer" unique_id=1227101234]
+visible = false
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="Choices/HBoxContainer/SubViewportContainer" unique_id=1290663466]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(480, 540)
+render_target_update_mode = 0
+
+[node name="Restaurant" parent="Choices/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1918815115 instance=ExtResource("2_6bp64")]
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="Choices/HBoxContainer" unique_id=518687438]
+visible = false
+layout_mode = 2
+
+[node name="SubViewport2" type="SubViewport" parent="Choices/HBoxContainer/SubViewportContainer2" unique_id=1613136887]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(480, 540)
+render_target_update_mode = 0
+
+[node name="Restaurant" parent="Choices/HBoxContainer/SubViewportContainer2/SubViewport2" unique_id=111137956 instance=ExtResource("2_6bp64")]
+
+[node name="FadeIn" type="ColorRect" parent="." unique_id=53994390]
+modulate = Color(1, 1, 1, 0)
+offset_left = -11.0
+offset_top = -5.0
+offset_right = 974.0
+offset_bottom = 550.0
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1495293753]
+visible = false
+
+[node name="Dither" type="ColorRect" parent="CanvasLayer" unique_id=103638559]
+material = SubResource("ShaderMaterial_3bmuq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Particles" parent="CanvasLayer" unique_id=1375815885 instance=ExtResource("5_hptm8")]
+
+[node name="Glass" type="ColorRect" parent="CanvasLayer" unique_id=152576474]
+material = SubResource("ShaderMaterial_nn7w8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
