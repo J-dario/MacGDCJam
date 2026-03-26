@@ -6,8 +6,16 @@ extends Node3D
 @onready var subtitles: RichTextLabel = $CanvasLayer/Subtitles
 @onready var next_arrow: Sprite2D = $CanvasLayer/Subtitles/NextArrow
 
+@onready var choice_1: Button = $CanvasLayer/Choice1
+@onready var choice_2: Button = $CanvasLayer/Choice2
+@onready var sub_viewport: SubViewport = $Choices/HBoxContainer/SubViewportContainer/SubViewport
+@onready var sub_viewport_2: SubViewport = $Choices/HBoxContainer/SubViewportContainer2/SubViewport2
+@onready var h_box_container: HBoxContainer = $Choices/HBoxContainer
+@onready var main_viewport: SubViewport = $MainScene/MainViewport
+
 var gameStart = false
 var canContinue = false
+var firstChoiceMade = false
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LeftClick"):
@@ -23,7 +31,7 @@ func nextVoice(audio: AudioStream, text: String, color: Color, volume: float = 0
 	subtitles.show()
 	subtitles.clear()
 	subtitles.push_color(color)
-	subtitles.add_text(text)
+	subtitles.append_text(text)
 	subtitles.pop()
 
 func endText():
@@ -44,3 +52,30 @@ func _on_voice_finished() -> void:
 
 func startChoice():
 	ui_anim.play("CloseEyes")
+
+func _on_ui_anim_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "CloseEyes" and !firstChoiceMade:
+		animation_player.play("QSExplain")
+
+
+func _on_choice_1_pressed() -> void:
+	choice_1.hide()
+	choice_2.hide()
+	
+	for child in main_viewport.get_children():
+		child.queue_free()
+	
+	var scene = sub_viewport.get_child(0).duplicate()
+	main_viewport.add_child(scene)
+	ui_anim.play("OpenEyes")
+
+func _on_choice_2_pressed() -> void:
+	choice_1.hide()
+	choice_2.hide()
+	
+	for child in main_viewport.get_children():
+		child.queue_free()
+	
+	var scene = sub_viewport_2.get_child(0).duplicate()
+	main_viewport.add_child(scene)
+	ui_anim.play("OpenEyes")

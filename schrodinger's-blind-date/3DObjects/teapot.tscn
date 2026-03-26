@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dexwowsuvtexf"]
+
+[ext_resource type="PackedScene" uid="uid://qe0sdxdatf47" path="res://3DObjects/Raws/teapot.fbx" id="1_8bncb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bncb"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="teapot" unique_id=1731416786 instance=ExtResource("1_8bncb")]
+
+[node name="Teapot_Node" parent="." index="0" unique_id=2011563744]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 0, 0, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." index="1" unique_id=1865913036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1815767, 1.7647272, 0)
+radius = 0.12841797
+height = 0.003
+cone = true
+material = SubResource("StandardMaterial3D_8bncb")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." index="2" unique_id=1255763703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00950557, 1.7647272, 0.025111556)
+radius = 1.1
+height = 0.003
+sides = 22
+cone = true
+material = SubResource("StandardMaterial3D_8bncb")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." index="3" unique_id=1446978326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2593553, 1.7647272, 0)
+radius = 0.12841797
+height = 0.003
+cone = true
+material = SubResource("StandardMaterial3D_8bncb")

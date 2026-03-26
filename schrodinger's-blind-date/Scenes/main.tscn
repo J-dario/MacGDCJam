@@ -14,12 +14,18 @@
 [ext_resource type="AudioStream" uid="uid://b7ma5s8wrogsl" path="res://Audios/Date/Trick.wav" id="9_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://cg06lklbfuvgj" path="res://2DResources/nextArrow.png" id="9_ynf5e"]
 [ext_resource type="AudioStream" uid="uid://8oljb8kgyypo" path="res://Audios/Date/QS.wav" id="10_jkdf5"]
+[ext_resource type="AudioStream" uid="uid://lb6bafnhdub4" path="res://Audios/Date/Ex1.wav" id="11_ee4r6"]
 [ext_resource type="AudioStream" uid="uid://buwo2bnht3ors" path="res://Audios/You/No.wav" id="11_wsu2k"]
+[ext_resource type="AudioStream" uid="uid://7ff83j4n1wry" path="res://Audios/Date/Ex2.wav" id="12_gt3je"]
 [ext_resource type="AudioStream" uid="uid://c2h66sby7vefa" path="res://Audios/Date/Eyes.wav" id="12_k12tt"]
+[ext_resource type="PackedScene" uid="uid://dxqsiclif3a54" path="res://Scenes/restaurantTea.tscn" id="12_pdsj5"]
+[ext_resource type="AudioStream" uid="uid://daugwrc81wsqs" path="res://Audios/Date/Ex3.wav" id="13_3pmx8"]
 [ext_resource type="AudioStream" uid="uid://be0mfyt4n6bww" path="res://Audios/You/Breathe.wav" id="17_h1bgf"]
 [ext_resource type="AudioStream" uid="uid://bxlvweqnvsy15" path="res://Audios/Cracking.mp3" id="18_fevyy"]
 [ext_resource type="AudioStream" uid="uid://ql3qh303j1vf" path="res://Audios/Shatter.mp3" id="19_hibaj"]
 [ext_resource type="AudioStream" uid="uid://b6lamlyrcxd3e" path="res://Audios/shut_up_ghost-smooth-cold-wind-looped-135538.mp3" id="19_pdsj5"]
+[ext_resource type="AudioStream" uid="uid://u03tfwr22efd" path="res://Audios/You/BreatheOut.wav" id="25_cbgmd"]
+[ext_resource type="AudioStream" uid="uid://cci6u8872hetf" path="res://Audios/Unshatter.mp3" id="26_1w6v2"]
 
 [sub_resource type="Animation" id="Animation_fb16x"]
 resource_name = "FadeFromBlack"
@@ -79,7 +85,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_344ge"]
 resource_name = "Intro"
-length = 120.0
+length = 30.0
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -87,8 +93,8 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5.6, 8.666667, 12.2, 17.4, 22.007856, 25.004608, 27, 30),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 5.6, 8.666667, 12.2, 17.4, 22.007856, 25.004608, 27, 29.9, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [ExtResource("4_344ge"), "H-Hi!.. Sorry I'm late my bus was a little d-delayed.", Color(0, 0, 0, 1), 0.0],
 "method": &"nextVoice"
@@ -105,7 +111,7 @@ tracks/0/keys = {
 "args": [ExtResource("9_fdnlq"), "Oh… I-In that case how about I show you a little trick.", Color(0.34509805, 0, 0, 1), 9.0],
 "method": &"nextVoice"
 }, {
-"args": [ExtResource("10_jkdf5"), "Have you ever heard of Quantum Superposition?", Color(0.34509805, 0, 0, 1), 9.0],
+"args": [ExtResource("10_jkdf5"), "Have you ever heard of [wave]Quantum Superposition?[/wave]", Color(0.34509805, 0, 0, 1), 9.0],
 "method": &"nextVoice"
 }, {
 "args": [ExtResource("11_wsu2k"), "Wha-... n-no.", Color(0, 0, 0, 1), 8.0],
@@ -115,7 +121,65 @@ tracks/0/keys = {
 "method": &"nextVoice"
 }, {
 "args": [],
+"method": &"endText"
+}, {
+"args": [],
 "method": &"startChoice"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_pdsj5"]
+resource_name = "QSExplain"
+length = 14.4
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 7, 11.2, 14.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [ExtResource("11_ee4r6"), "You see, until particles are measured in some way they exist in multiple states at once.", Color(0.34509805, 0, 0, 1), 9.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("12_gt3je"), "And only once these particles are [wave]observed[/wave] do they collapse into one state.", Color(0.34509805, 0, 0, 1), 9.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("13_3pmx8"), "Try opening your eyes in the [wave]Superposition[/wave] you want the coffee in.", Color(0.34509805, 0, 0, 1), 9.0],
+"method": &"nextVoice"
+}, {
+"args": [],
+"method": &"endText"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Choice1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(14.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Choice2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(14.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show"
 }]
 }
 
@@ -190,6 +254,7 @@ _data = {
 &"FadeFromBlack": SubResource("Animation_fb16x"),
 &"FadeToBlack": SubResource("Animation_6bp64"),
 &"Intro": SubResource("Animation_344ge"),
+&"QSExplain": SubResource("Animation_pdsj5"),
 &"RESET": SubResource("Animation_i0tqs"),
 &"fall": SubResource("Animation_rsiac")
 }
@@ -343,6 +408,135 @@ tracks/8/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_ueoa1"]
+resource_name = "OpenEyes"
+length = 2.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UIAnim/BreatheOut")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UIAnim/Unshatter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Dither")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Glass:material:shader_parameter/fall_progress")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.4333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/Glass")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"show"
+}, {
+"args": [],
+"method": &"hide"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Dither:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("UIAnim/Particles")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide"
+}]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("UIAnim/Wind")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Choices/HBoxContainer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_h1bgf"]
 length = 0.001
 tracks/0/type = "value"
@@ -381,10 +575,23 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Glass:material:shader_parameter/fall_progress")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b3802"]
 _data = {
 &"CloseEyes": SubResource("Animation_k12tt"),
+&"OpenEyes": SubResource("Animation_ueoa1"),
 &"RESET": SubResource("Animation_h1bgf")
 }
 
@@ -402,9 +609,14 @@ autoplay = true
 libraries/ = SubResource("AnimationLibrary_rsiac")
 autoplay = &"FadeFromBlack"
 
-[node name="MainScene" type="Node" parent="." unique_id=465686493]
+[node name="MainScene" type="SubViewportContainer" parent="." unique_id=2117767894]
 
-[node name="Restaurant" parent="MainScene" unique_id=847933197 instance=ExtResource("2_6bp64")]
+[node name="MainViewport" type="SubViewport" parent="MainScene" unique_id=1138671946]
+handle_input_locally = false
+size = Vector2i(960, 540)
+render_target_update_mode = 4
+
+[node name="Restaurant" parent="MainScene/MainViewport" unique_id=847933197 instance=ExtResource("2_6bp64")]
 
 [node name="Choices" type="Node" parent="." unique_id=1608099819]
 
@@ -434,7 +646,7 @@ handle_input_locally = false
 size = Vector2i(480, 540)
 render_target_update_mode = 0
 
-[node name="Restaurant" parent="Choices/HBoxContainer/SubViewportContainer2/SubViewport2" unique_id=111137956 instance=ExtResource("2_6bp64")]
+[node name="Restaurant" parent="Choices/HBoxContainer/SubViewportContainer2/SubViewport2" unique_id=1823358342 instance=ExtResource("12_pdsj5")]
 
 [node name="FadeIn" type="ColorRect" parent="." unique_id=53994390]
 visible = false
@@ -499,6 +711,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Choice1" type="Button" parent="CanvasLayer" unique_id=877700474]
+visible = false
+offset_right = 480.0
+offset_bottom = 540.0
+
+[node name="Choice2" type="Button" parent="CanvasLayer" unique_id=1170069521]
+visible = false
+offset_left = 480.0
+offset_right = 960.0
+offset_bottom = 540.0
+
 [node name="UIAnim" type="AnimationPlayer" parent="." unique_id=1762099340]
 libraries/ = SubResource("AnimationLibrary_b3802")
 
@@ -513,10 +736,19 @@ stream = ExtResource("19_hibaj")
 
 [node name="Wind" type="AudioStreamPlayer" parent="UIAnim" unique_id=429515964]
 stream = ExtResource("19_pdsj5")
-volume_db = -5.0
+volume_db = -6.0
 
 [node name="Particles" parent="UIAnim" unique_id=1375815885 instance=ExtResource("5_hptm8")]
 visible = false
 
+[node name="BreatheOut" type="AudioStreamPlayer" parent="UIAnim" unique_id=1685430500]
+stream = ExtResource("25_cbgmd")
+
+[node name="Unshatter" type="AudioStreamPlayer" parent="UIAnim" unique_id=418532667]
+stream = ExtResource("26_1w6v2")
+
 [connection signal="finished" from="Voice" to="." method="_on_voice_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="CanvasLayer/Choice1" to="." method="_on_choice_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Choice2" to="." method="_on_choice_2_pressed"]
+[connection signal="animation_finished" from="UIAnim" to="." method="_on_ui_anim_animation_finished"]
