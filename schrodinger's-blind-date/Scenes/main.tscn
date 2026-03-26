@@ -4,10 +4,22 @@
 [ext_resource type="PackedScene" uid="uid://b08tic88yythe" path="res://Scenes/restaurant.tscn" id="2_6bp64"]
 [ext_resource type="AudioStream" uid="uid://tbq156e1d4vw" path="res://Audios/junipersona-walking-in-the-rain-153030 (1).mp3" id="2_344ge"]
 [ext_resource type="FontFile" uid="uid://dhmcalwcnfnla" path="res://2DResources/Jersey10-Regular.ttf" id="3_344ge"]
-[ext_resource type="AudioStream" uid="uid://cwged4m31akun" path="res://Audios/You/Hi.mp3" id="4_344ge"]
+[ext_resource type="AudioStream" uid="uid://cd3i6k5c860se" path="res://Audios/You/Hi.wav" id="4_344ge"]
 [ext_resource type="Shader" uid="uid://da55k7f204jhi" path="res://2DResources/ditherShader.tres" id="4_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://dy88ysa4nfym2" path="res://Scenes/splitParticles.tscn" id="5_hptm8"]
 [ext_resource type="Shader" uid="uid://ci7eausy8u700" path="res://2DResources/glassShardShader.tres" id="6_d1ilt"]
+[ext_resource type="AudioStream" uid="uid://ofxaxoo17tnf" path="res://Audios/Date/NoWorries.wav" id="6_hptm8"]
+[ext_resource type="AudioStream" uid="uid://de6mgfhr6fwdp" path="res://Audios/Date/Coffee.wav" id="7_d1ilt"]
+[ext_resource type="AudioStream" uid="uid://81s6auuouu0p" path="res://Audios/You/Tea.wav" id="8_6iyac"]
+[ext_resource type="AudioStream" uid="uid://b7ma5s8wrogsl" path="res://Audios/Date/Trick.wav" id="9_fdnlq"]
+[ext_resource type="Texture2D" uid="uid://cg06lklbfuvgj" path="res://2DResources/nextArrow.png" id="9_ynf5e"]
+[ext_resource type="AudioStream" uid="uid://8oljb8kgyypo" path="res://Audios/Date/QS.wav" id="10_jkdf5"]
+[ext_resource type="AudioStream" uid="uid://buwo2bnht3ors" path="res://Audios/You/No.wav" id="11_wsu2k"]
+[ext_resource type="AudioStream" uid="uid://c2h66sby7vefa" path="res://Audios/Date/Eyes.wav" id="12_k12tt"]
+[ext_resource type="AudioStream" uid="uid://be0mfyt4n6bww" path="res://Audios/You/Breathe.wav" id="17_h1bgf"]
+[ext_resource type="AudioStream" uid="uid://bxlvweqnvsy15" path="res://Audios/Cracking.mp3" id="18_fevyy"]
+[ext_resource type="AudioStream" uid="uid://ql3qh303j1vf" path="res://Audios/Shatter.mp3" id="19_hibaj"]
+[ext_resource type="AudioStream" uid="uid://b6lamlyrcxd3e" path="res://Audios/shut_up_ghost-smooth-cold-wind-looped-135538.mp3" id="19_pdsj5"]
 
 [sub_resource type="Animation" id="Animation_fb16x"]
 resource_name = "FadeFromBlack"
@@ -67,6 +79,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_344ge"]
 resource_name = "Intro"
+length = 120.0
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -74,11 +87,35 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 5.6, 8.666667, 12.2, 17.4, 22.007856, 25.004608, 27, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
-"args": [ExtResource("4_344ge"), "Hi wassup", Color(0.7882353, 0, 0.8745098, 1)],
+"args": [ExtResource("4_344ge"), "H-Hi!.. Sorry I'm late my bus was a little d-delayed.", Color(0, 0, 0, 1), 0.0],
 "method": &"nextVoice"
+}, {
+"args": [ExtResource("6_hptm8"), "Oh no worries! My bus was late too.", Color(0.34509805, 0, 0, 1)],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("7_d1ilt"), "Here, I ordered some coffee for us for when you got here.", Color(0.34509805, 0, 0, 1)],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("8_6iyac"), "Oh… uhhh… I-I only drink tea s-sorry.", Color(0, 0, 0, 1), 9.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("9_fdnlq"), "Oh… I-In that case how about I show you a little trick.", Color(0.34509805, 0, 0, 1), 9.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("10_jkdf5"), "Have you ever heard of Quantum Superposition?", Color(0.34509805, 0, 0, 1), 9.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("11_wsu2k"), "Wha-... n-no.", Color(0, 0, 0, 1), 8.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("12_k12tt"), "Here just close your eyes and cover your nose.", Color(0.34509805, 0, 0, 1), 9.0],
+"method": &"nextVoice"
+}, {
+"args": [],
+"method": &"startChoice"
 }]
 }
 
@@ -182,6 +219,175 @@ shader_parameter/edge_thickness = 0.01
 shader_parameter/edge_brightness = 0.35
 shader_parameter/alpha_fade = 0.0
 
+[sub_resource type="Animation" id="Animation_k12tt"]
+resource_name = "CloseEyes"
+length = 3.03
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Dither:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Dither:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UIAnim/UI")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Dither:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5, 3, 3.0300002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.533187, 1), Vector2(1, 1)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("UIAnim/Cracking")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("UIAnim/Shatter")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.03),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("UIAnim/Particles")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.03),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show"
+}]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Choices/HBoxContainer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3.03),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show"
+}]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("UIAnim/Wind")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_h1bgf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Dither:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Dither:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Dither:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3802"]
+_data = {
+&"CloseEyes": SubResource("Animation_k12tt"),
+&"RESET": SubResource("Animation_h1bgf")
+}
+
 [node name="Main" type="Node3D" unique_id=1421159067]
 script = ExtResource("1_21xkr")
 
@@ -190,18 +396,7 @@ stream = ExtResource("2_344ge")
 volume_db = -20.0
 autoplay = true
 
-[node name="Subtitles" type="RichTextLabel" parent="." unique_id=811096282]
-z_index = 1
-offset_top = 491.0
-offset_right = 960.0
-offset_bottom = 540.0
-theme_override_fonts/normal_font = ExtResource("3_344ge")
-theme_override_font_sizes/normal_font_size = 23
-bbcode_enabled = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Voice" type="AudioStreamPlayer2D" parent="." unique_id=1610614117]
+[node name="Voice" type="AudioStreamPlayer" parent="." unique_id=1050584023]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1162518477]
 libraries/ = SubResource("AnimationLibrary_rsiac")
@@ -242,6 +437,7 @@ render_target_update_mode = 0
 [node name="Restaurant" parent="Choices/HBoxContainer/SubViewportContainer2/SubViewport2" unique_id=111137956 instance=ExtResource("2_6bp64")]
 
 [node name="FadeIn" type="ColorRect" parent="." unique_id=53994390]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = -11.0
 offset_top = -5.0
@@ -250,22 +446,77 @@ offset_bottom = 550.0
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1495293753]
+
+[node name="Subtitles" type="RichTextLabel" parent="CanvasLayer" unique_id=811096282]
 visible = false
+z_index = 1
+offset_top = 491.0
+offset_right = 960.0
+offset_bottom = 540.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("3_344ge")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Subtitles" unique_id=804940444]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 49.0
+color = Color(0, 0, 0, 0.25490198)
+
+[node name="NextArrow" type="Sprite2D" parent="CanvasLayer/Subtitles" unique_id=2145459159]
+position = Vector2(944, 32)
+rotation = -1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_ynf5e")
 
 [node name="Dither" type="ColorRect" parent="CanvasLayer" unique_id=103638559]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
 material = SubResource("ShaderMaterial_3bmuq")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Particles" parent="CanvasLayer" unique_id=1375815885 instance=ExtResource("5_hptm8")]
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="Glass" type="ColorRect" parent="CanvasLayer" unique_id=152576474]
+visible = false
 material = SubResource("ShaderMaterial_nn7w8")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="UIAnim" type="AnimationPlayer" parent="." unique_id=1762099340]
+libraries/ = SubResource("AnimationLibrary_b3802")
+
+[node name="UI" type="AudioStreamPlayer" parent="UIAnim" unique_id=2112588528]
+stream = ExtResource("17_h1bgf")
+
+[node name="Cracking" type="AudioStreamPlayer" parent="UIAnim" unique_id=1228071693]
+stream = ExtResource("18_fevyy")
+
+[node name="Shatter" type="AudioStreamPlayer" parent="UIAnim" unique_id=1898674644]
+stream = ExtResource("19_hibaj")
+
+[node name="Wind" type="AudioStreamPlayer" parent="UIAnim" unique_id=429515964]
+stream = ExtResource("19_pdsj5")
+volume_db = -5.0
+
+[node name="Particles" parent="UIAnim" unique_id=1375815885 instance=ExtResource("5_hptm8")]
+visible = false
+
+[connection signal="finished" from="Voice" to="." method="_on_voice_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

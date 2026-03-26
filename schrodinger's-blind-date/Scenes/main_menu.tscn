@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dhmcalwcnfnla" path="res://2DResources/Jersey10-Regular.ttf" id="2_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://6mxryvsaulk" path="res://2DResources/button.png" id="4_ce3w2"]
 [ext_resource type="AudioStream" uid="uid://ce3uwnug53weu" path="res://Audios/junipersona-friday-night-at-the-club-vintage-154493.mp3" id="5_n45e2"]
+[ext_resource type="AudioStream" uid="uid://clxej3h0ofshi" path="res://2DResources/47313572-ui-sounds-pack-3-7-359721.mp3" id="6_opfnp"]
 
 [sub_resource type="Animation" id="Animation_n45e2"]
 resource_name = "FadeIn"
@@ -148,6 +149,9 @@ color = Color(0, 0, 0, 1)
 stream = ExtResource("5_n45e2")
 volume_db = -10.0
 autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=176482459]
+stream = ExtResource("6_opfnp")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
