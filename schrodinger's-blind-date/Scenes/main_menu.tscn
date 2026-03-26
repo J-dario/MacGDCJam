@@ -2,17 +2,113 @@
 
 [ext_resource type="PackedScene" uid="uid://b08tic88yythe" path="res://Scenes/restaurant.tscn" id="1_28flt"]
 [ext_resource type="Script" uid="uid://dgsfhsqcjbbko" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+[ext_resource type="FontFile" uid="uid://dhmcalwcnfnla" path="res://2DResources/Jersey10-Regular.ttf" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://6mxryvsaulk" path="res://2DResources/button.png" id="4_ce3w2"]
+[ext_resource type="AudioStream" uid="uid://ce3uwnug53weu" path="res://Audios/junipersona-friday-night-at-the-club-vintage-154493.mp3" id="5_n45e2"]
+
+[sub_resource type="Animation" id="Animation_n45e2"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cp0ys"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_opfnp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cp0ys"]
+_data = {
+&"FadeIn": SubResource("Animation_n45e2"),
+&"FadeOut": SubResource("Animation_cp0ys"),
+&"RESET": SubResource("Animation_opfnp")
+}
 
 [node name="MainMenu" type="Node3D" unique_id=587656456]
 script = ExtResource("1_48xlc")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=541493574]
-offset_left = 53.0
-offset_top = 120.0
-offset_right = 593.0
-offset_bottom = 187.0
-theme_override_font_sizes/normal_font_size = 40
-text = "Schrodinger's Blind Date!?"
+offset_left = 68.0
+offset_top = 138.0
+offset_right = 608.0
+offset_bottom = 321.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/outline_size = 17
+theme_override_fonts/normal_font = ExtResource("2_1ehe0")
+theme_override_font_sizes/normal_font_size = 70
+text = " Schrodinger's 
+ Blind Date!?"
 
 [node name="Restaurant" parent="." unique_id=847933197 instance=ExtResource("1_28flt")]
 
@@ -22,29 +118,38 @@ visible = false
 [node name="Camera3D" parent="Restaurant" index="2" unique_id=339772763]
 transform = Transform3D(0.9848078, -0.11161886, 0.13302222, -0.030153701, 0.64448345, 0.7640235, -0.17101003, -0.7564274, 0.6313266, -0.9000003, 1.8999997, 12)
 
+[node name="Button2" type="Sprite2D" parent="." unique_id=1513529928]
+position = Vector2(179, 355)
+texture = ExtResource("4_ce3w2")
+
 [node name="Button" type="Button" parent="." unique_id=115113917]
-offset_left = 78.0
-offset_top = 303.0
-offset_right = 236.0
-offset_bottom = 344.0
+offset_left = 82.0
+offset_top = 324.0
+offset_right = 274.0
+offset_bottom = 385.0
+theme_override_fonts/font = ExtResource("2_1ehe0")
+theme_override_font_sizes/font_size = 46
 text = "Play"
 
-[node name="Button2" type="Button" parent="." unique_id=1914294187]
-offset_left = 78.0
-offset_top = 372.0
-offset_right = 236.0
-offset_bottom = 415.0
-text = "Credits"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1481844555]
+libraries/ = SubResource("AnimationLibrary_cp0ys")
+autoplay = &"FadeOut"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=699644714]
 visible = false
+modulate = Color(1, 1, 1, 0)
 offset_left = -1.0
 offset_top = -1.0
 offset_right = 964.0
 offset_bottom = 545.0
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=85698809]
+stream = ExtResource("5_n45e2")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="Restaurant"]
