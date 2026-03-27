@@ -3,29 +3,115 @@
 [ext_resource type="Script" uid="uid://1wwi0keoaqau" path="res://Scripts/main.gd" id="1_21xkr"]
 [ext_resource type="PackedScene" uid="uid://b08tic88yythe" path="res://Scenes/restaurant.tscn" id="2_6bp64"]
 [ext_resource type="AudioStream" uid="uid://tbq156e1d4vw" path="res://Audios/junipersona-walking-in-the-rain-153030 (1).mp3" id="2_344ge"]
+[ext_resource type="AudioStream" uid="uid://d2t0tvre80sgb" path="res://Audios/Date/CoffeeChoice.wav" id="3_1w6v2"]
+[ext_resource type="AudioStream" uid="uid://0lfabgeuwrya" path="res://Audios/Waiter/Hi.mp3" id="3_6vcvc"]
 [ext_resource type="FontFile" uid="uid://dhmcalwcnfnla" path="res://2DResources/Jersey10-Regular.ttf" id="3_344ge"]
 [ext_resource type="AudioStream" uid="uid://cd3i6k5c860se" path="res://Audios/You/Hi.wav" id="4_344ge"]
+[ext_resource type="AudioStream" uid="uid://oahy4qkin0n6" path="res://Audios/You/Burger.wav" id="4_kltya"]
 [ext_resource type="Shader" uid="uid://da55k7f204jhi" path="res://2DResources/ditherShader.tres" id="4_ynf5e"]
+[ext_resource type="AudioStream" uid="uid://dxta16t8hxpqj" path="res://Audios/Waiter/Sorry.wav" id="5_e08e2"]
 [ext_resource type="PackedScene" uid="uid://dy88ysa4nfym2" path="res://Scenes/splitParticles.tscn" id="5_hptm8"]
 [ext_resource type="Shader" uid="uid://ci7eausy8u700" path="res://2DResources/glassShardShader.tres" id="6_d1ilt"]
 [ext_resource type="AudioStream" uid="uid://ofxaxoo17tnf" path="res://Audios/Date/NoWorries.wav" id="6_hptm8"]
+[ext_resource type="AudioStream" uid="uid://c3xeh6ntu3nwd" path="res://Audios/Waiter/Sorry2.wav" id="6_neg2b"]
 [ext_resource type="AudioStream" uid="uid://de6mgfhr6fwdp" path="res://Audios/Date/Coffee.wav" id="7_d1ilt"]
+[ext_resource type="AudioStream" uid="uid://0rpso6hf7drt" path="res://Audios/You/That.wav" id="7_e08e2"]
 [ext_resource type="AudioStream" uid="uid://81s6auuouu0p" path="res://Audios/You/Tea.wav" id="8_6iyac"]
+[ext_resource type="AudioStream" uid="uid://cmonhuh4aex88" path="res://Audios/Waiter/Sorry3.mp3" id="8_neg2b"]
 [ext_resource type="AudioStream" uid="uid://b7ma5s8wrogsl" path="res://Audios/Date/Trick.wav" id="9_fdnlq"]
+[ext_resource type="AudioStream" uid="uid://dkih0ao0ku11x" path="res://Audios/Date/Burger.wav" id="9_jwpg7"]
 [ext_resource type="Texture2D" uid="uid://cg06lklbfuvgj" path="res://2DResources/nextArrow.png" id="9_ynf5e"]
 [ext_resource type="AudioStream" uid="uid://8oljb8kgyypo" path="res://Audios/Date/QS.wav" id="10_jkdf5"]
+[ext_resource type="AudioStream" uid="uid://b2ryb4co772re" path="res://Audios/Date/Side.wav" id="10_k2e45"]
+[ext_resource type="AudioStream" uid="uid://dtxxn42blnm1c" path="res://Audios/Waiter/ThankYou.mp3" id="11_536cc"]
 [ext_resource type="AudioStream" uid="uid://lb6bafnhdub4" path="res://Audios/Date/Ex1.wav" id="11_ee4r6"]
 [ext_resource type="AudioStream" uid="uid://buwo2bnht3ors" path="res://Audios/You/No.wav" id="11_wsu2k"]
 [ext_resource type="AudioStream" uid="uid://7ff83j4n1wry" path="res://Audios/Date/Ex2.wav" id="12_gt3je"]
+[ext_resource type="AudioStream" uid="uid://bhy01uuttu0ya" path="res://Audios/Waiter/IGetYou.mp3" id="12_k2e45"]
 [ext_resource type="AudioStream" uid="uid://c2h66sby7vefa" path="res://Audios/Date/Eyes.wav" id="12_k12tt"]
 [ext_resource type="PackedScene" uid="uid://dxqsiclif3a54" path="res://Scenes/restaurantTea.tscn" id="12_pdsj5"]
 [ext_resource type="AudioStream" uid="uid://daugwrc81wsqs" path="res://Audios/Date/Ex3.wav" id="13_3pmx8"]
+[ext_resource type="AudioStream" uid="uid://58rmtrjr2h8q" path="res://Audios/Date/SaySomething.wav" id="13_536cc"]
+[ext_resource type="AudioStream" uid="uid://dhyaxl8iie5m0" path="res://Audios/You/Nothing.mp3" id="14_aqgau"]
+[ext_resource type="AudioStream" uid="uid://cvsfownev2ayp" path="res://Audios/Date/Neat.wav" id="15_ueoa1"]
 [ext_resource type="AudioStream" uid="uid://be0mfyt4n6bww" path="res://Audios/You/Breathe.wav" id="17_h1bgf"]
 [ext_resource type="AudioStream" uid="uid://bxlvweqnvsy15" path="res://Audios/Cracking.mp3" id="18_fevyy"]
 [ext_resource type="AudioStream" uid="uid://ql3qh303j1vf" path="res://Audios/Shatter.mp3" id="19_hibaj"]
 [ext_resource type="AudioStream" uid="uid://b6lamlyrcxd3e" path="res://Audios/shut_up_ghost-smooth-cold-wind-looped-135538.mp3" id="19_pdsj5"]
 [ext_resource type="AudioStream" uid="uid://u03tfwr22efd" path="res://Audios/You/BreatheOut.wav" id="25_cbgmd"]
 [ext_resource type="AudioStream" uid="uid://cci6u8872hetf" path="res://Audios/Unshatter.mp3" id="26_1w6v2"]
+
+[sub_resource type="Animation" id="Animation_hpc6h"]
+resource_name = "Burger"
+length = 45.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8.5, 11.5, 15, 20, 23.4, 28, 32, 36, 39, 41.5, 43, 45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [ExtResource("3_6vcvc"), "Hi! Welcome to glorbingos, where we put the glorb in the ingos. What can I get for you today?", Color(0.34509805, 0.6392157, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("4_kltya"), "I'll have the-uh uhh burger.", Color(0, 0, 0, 1), 5.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("5_e08e2"), "[wave]Sorry...[/wave] we don't have anything called [wave]\"burger\"[/wave].", Color(0.34509805, 0.6392157, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("6_neg2b"), "But we do have the [shake]big glorbingo belly buster bingo burger[/shake].", Color(0.34509805, 0.6392157, 0, 1), 0.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("7_e08e2"), "Y-yeah, I'll have th-that please.", Color(0, 0, 0, 1), 5.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("8_neg2b"), "[wave]Sorry...[/wave] We don't have anything called \"that\" on our menu.", Color(0.34509805, 0.6392157, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("9_jwpg7"), "Uh... We'll take two  glorbingo belly buster bingo burgers please.", Color(0.34509805, 0, 0, 1), 2.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("10_k2e45"), "And for the sides we'll take two glopkenuinley glorpicious fries.", Color(0.34509805, 0, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("11_536cc"), "Thank you! I'll get those out real quick for [wave]you[/wave].", Color(0.34509805, 0.6392157, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("12_k2e45"), "[shake]I'll get YOU next time...[/shake]", Color(0.34509805, 0.6392157, 0, 1), -4.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("13_536cc"), "D-Did they say something?", Color(0.34509805, 0, 0, 1), 0.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("14_aqgau"), "Oh no it's n-nothing...", Color(0, 0, 0, 1), 9.0],
+"method": &"nextVoice"
+}, {
+"args": [],
+"method": &"endText"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6vcvc"]
+resource_name = "CoffeeChoice"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("3_1w6v2"), "Did you feel like trying the coffee? It's pretty good.", Color(0.34509805, 0, 0, 1), 9.0],
+"method": &"nextVoice"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_fb16x"]
 resource_name = "FadeFromBlack"
@@ -210,6 +296,24 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_7k868"]
+resource_name = "TeaChoice"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("15_ueoa1"), "Voilla! Neat trick right?", Color(0.34509805, 0, 0, 1), 10.0],
+"method": &"nextVoice"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_rsiac"]
 resource_name = "fall"
 tracks/0/type = "value"
@@ -251,11 +355,14 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rsiac"]
 _data = {
+&"Burger": SubResource("Animation_hpc6h"),
+&"CoffeeChoice": SubResource("Animation_6vcvc"),
 &"FadeFromBlack": SubResource("Animation_fb16x"),
 &"FadeToBlack": SubResource("Animation_6bp64"),
 &"Intro": SubResource("Animation_344ge"),
 &"QSExplain": SubResource("Animation_pdsj5"),
 &"RESET": SubResource("Animation_i0tqs"),
+&"TeaChoice": SubResource("Animation_7k868"),
 &"fall": SubResource("Animation_rsiac")
 }
 

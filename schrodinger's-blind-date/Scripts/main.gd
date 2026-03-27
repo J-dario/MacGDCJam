@@ -16,6 +16,7 @@ extends Node3D
 var gameStart = false
 var canContinue = false
 var firstChoiceMade = false
+var choice = true
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("LeftClick"):
@@ -39,10 +40,13 @@ func endText():
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "FadeFromBlack" and !gameStart:
-		animation_player.play("Intro")
 		gameStart = true
+		#animation_player.play("Intro")
 		
-		animation_player.seek(25, true)
+		animation_player.play("TeaChoice")
+		#animation_player.seek(25, true)
+	elif anim_name == "CoffeeChoice" or anim_name == "TeaChoice":
+		animation_player.play("Burger")
 
 func _on_voice_finished() -> void:
 	animation_player.pause()
@@ -56,11 +60,24 @@ func startChoice():
 func _on_ui_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "CloseEyes" and !firstChoiceMade:
 		animation_player.play("QSExplain")
+	if anim_name == "OpenEyes" and !firstChoiceMade:
+		if choice:
+			choice1()
+		else:
+			choice2()
 
+func choice1():
+	firstChoiceMade = true
+	animation_player.play("CoffeeChoice")
 
+func choice2():
+	firstChoiceMade = true
+	animation_player.play("TeaChoice")
+	
 func _on_choice_1_pressed() -> void:
 	choice_1.hide()
 	choice_2.hide()
+	choice = true
 	
 	for child in main_viewport.get_children():
 		child.queue_free()
@@ -72,6 +89,7 @@ func _on_choice_1_pressed() -> void:
 func _on_choice_2_pressed() -> void:
 	choice_1.hide()
 	choice_2.hide()
+	choice = false
 	
 	for child in main_viewport.get_children():
 		child.queue_free()
