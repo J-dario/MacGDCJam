@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://bild6g6wgujop"]
+
+[ext_resource type="Script" uid="uid://xiqyq1dxkofm" path="res://Scenes/hide.gd" id="1_6svk3"]
+[ext_resource type="Texture2D" uid="uid://xw86wow22ltk" path="res://3DObjects/Raws/240_F_95800939_v2n90lqQAidXoSHI6Gx7FqsEASfnESZz.jpg" id="1_ib3vs"]
+[ext_resource type="Texture2D" uid="uid://b625u0ybqd7qx" path="res://3DObjects/Raws/360_F_133054650_cjj42n9Le4TxkgtTlF9GibIAyubB6GZZ.jpg" id="2_ma1ro"]
+[ext_resource type="PackedScene" uid="uid://bhpvs5jhcjhg" path="res://3DObjects/coffee.tscn" id="3_y8cj8"]
+[ext_resource type="Script" uid="uid://cmvntljrlafv0" path="res://Scripts/camera.gd" id="4_v1ttu"]
+[ext_resource type="PackedScene" uid="uid://dbwvcfa557cep" path="res://Scenes/schro.tscn" id="5_ma1ro"]
+[ext_resource type="Texture2D" uid="uid://fn3sfkb7w30f" path="res://2DResources/gettyimages-185226263-612x612.jpg" id="6_y8cj8"]
+[ext_resource type="Texture2D" uid="uid://bphn5fxttasmg" path="res://Scenes/worker.jpg" id="7_v1ttu"]
+[ext_resource type="PackedScene" uid="uid://ebsx8pswt4ds" path="res://3DObjects/candle.tscn" id="8_2ujdn"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mtvav"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_1pkq2"]
+sky_material = SubResource("ProceduralSkyMaterial_mtvav")
+
+[sub_resource type="Environment" id="Environment_v3g5v"]
+background_mode = 1
+sky = SubResource("Sky_1pkq2")
+tonemap_mode = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fb16x"]
+albedo_texture = ExtResource("1_ib3vs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1hja"]
+albedo_texture = ExtResource("2_ma1ro")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ujdn"]
+albedo_texture = ExtResource("6_y8cj8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6svk3"]
+albedo_texture = ExtResource("7_v1ttu")
+
+[sub_resource type="Animation" id="Animation_6svk3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-18.500002, -6.2500005, -12.900001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5.900001, -6.2500005, -13.800001)]
+}
+
+[sub_resource type="Animation" id="Animation_2ujdn"]
+resource_name = "stop"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-20.800001, -6.2500005, -12.900001), Vector3(-18.500002, -6.2500005, -12.900001), Vector3(-20.800001, -6.2500005, -12.900001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-5.900001, -6.2500005, -13.800001), Vector3(-7.2000012, -6.2500005, -13.800001), Vector3(-5.900001, -6.2500005, -13.800001)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6svk3"]
+_data = {
+&"RESET": SubResource("Animation_6svk3"),
+&"stop": SubResource("Animation_2ujdn")
+}
+
+[node name="Restaurant" type="Node3D" unique_id=847933197]
+script = ExtResource("1_6svk3")
+
+[node name="Set" type="Node" parent="." unique_id=81393421]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Set" unique_id=710540283]
+environment = SubResource("Environment_v3g5v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Set" unique_id=193948050]
+transform = Transform3D(0.86602527, -0.43301293, 0.24999996, 0.08682419, 0.6226399, 0.7776768, -0.49240398, -0.65178174, 0.57681787, 0, 54.000004, -3.1000001)
+light_color = Color(0.58493555, 0.69064635, 1, 1)
+light_energy = 0.159
+shadow_enabled = true
+sky_mode = 1
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Set" unique_id=1277779586]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 3.5, 0, -30.8, 0.349998)
+material_override = SubResource("StandardMaterial3D_fb16x")
+flip_faces = true
+size = Vector3(37.4, 0.6, 74.700005)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Set" unique_id=200752583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.599999, -12.199998, -84.7)
+material_override = SubResource("StandardMaterial3D_q1hja")
+size = Vector3(300.2, 199.3, 1)
+
+[node name="coffee" parent="Set" unique_id=1351446101 instance=ExtResource("3_y8cj8")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="coffee2" parent="Set" unique_id=1085638098 instance=ExtResource("3_y8cj8")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -29.9, 0, -38.199997)
+
+[node name="coffee3" parent="Set" unique_id=1361009674 instance=ExtResource("3_y8cj8")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 29.9, 0, -38.199997)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=339772763]
+transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.6427876, 0, -0.6427876, 0.7660445, -25.400002, 6.1, 14)
+script = ExtResource("4_v1ttu")
+
+[node name="Schro" parent="." unique_id=1162033211 instance=ExtResource("5_ma1ro")]
+transform = Transform3D(0.5150381, -0.8571673, 0, 0.8571673, 0.5150381, 0, 0, 0, 1, -39.675385, -10.125602, -4.109625)
+
+[node name="ScrollBookCandle" parent="." unique_id=1801978778 instance=ExtResource("8_2ujdn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.100002, -14.6, -1.3999996)
+
+[node name="Models" parent="ScrollBookCandle" index="0" unique_id=1726975458]
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2017033257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.500002, -6.2500005, -12.900001)
+size = Vector3(18.800001, 19.9, 1)
+material = SubResource("StandardMaterial3D_2ujdn")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=621266626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.900001, -6.2500005, -13.800001)
+size = Vector3(18.800001, 19.9, 1)
+material = SubResource("StandardMaterial3D_6svk3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=139740136]
+libraries/ = SubResource("AnimationLibrary_6svk3")
+autoplay = &"stop"
+
+[editable path="ScrollBookCandle"]

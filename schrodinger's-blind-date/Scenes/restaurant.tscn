@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://xw86wow22ltk" path="res://3DObjects/Raws/240_F_95800939_v2n90lqQAidXoSHI6Gx7FqsEASfnESZz.jpg" id="1_7g0bs"]
 [ext_resource type="Texture2D" uid="uid://b625u0ybqd7qx" path="res://3DObjects/Raws/360_F_133054650_cjj42n9Le4TxkgtTlF9GibIAyubB6GZZ.jpg" id="2_euvhj"]
 [ext_resource type="PackedScene" uid="uid://bhpvs5jhcjhg" path="res://3DObjects/coffee.tscn" id="3_62x4v"]
-[ext_resource type="PackedScene" uid="uid://dbwvcfa557cep" path="res://Scenes/schro.tscn" id="4_xwk5a"]
 [ext_resource type="Script" uid="uid://cmvntljrlafv0" path="res://Scripts/camera.gd" id="5_uq202"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mtvav"]
@@ -57,9 +56,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -29.9, 0, -38.199997)
 
 [node name="coffee3" parent="Set" unique_id=1361009674 instance=ExtResource("3_62x4v")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 29.9, 0, -38.199997)
-
-[node name="Schro" parent="." unique_id=1162033211 instance=ExtResource("4_xwk5a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9753861, 0.7743988, -7.2096252)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=339772763]
 transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.6427876, 0, -0.6427876, 0.7660445, -2.7000003, 6.1, 14)

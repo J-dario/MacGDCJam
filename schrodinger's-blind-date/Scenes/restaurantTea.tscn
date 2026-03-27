@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b625u0ybqd7qx" path="res://3DObjects/Raws/360_F_133054650_cjj42n9Le4TxkgtTlF9GibIAyubB6GZZ.jpg" id="2_br8ar"]
 [ext_resource type="PackedScene" uid="uid://bhpvs5jhcjhg" path="res://3DObjects/coffee.tscn" id="3_6daie"]
 [ext_resource type="PackedScene" uid="uid://dexwowsuvtexf" path="res://3DObjects/teapot.tscn" id="4_br8ar"]
-[ext_resource type="PackedScene" uid="uid://dbwvcfa557cep" path="res://Scenes/schro.tscn" id="4_hylb3"]
 [ext_resource type="Script" uid="uid://cmvntljrlafv0" path="res://Scripts/camera.gd" id="5_11y5o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mtvav"]
@@ -226,9 +225,6 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 29.9, 0, -38.199997)
 
 [node name="teapot" parent="Set" unique_id=1731416786 instance=ExtResource("4_br8ar")]
 transform = Transform3D(-0.9848077, 0, -0.17364824, 0, 1, 0, 0.17364824, 0, -0.9848077, 0.09999994, -0.7, 9.3)
-
-[node name="Schro" parent="." unique_id=1162033211 instance=ExtResource("4_hylb3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9753861, 0.7743988, -7.2096252)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=339772763]
 transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.6427876, 0, -0.6427876, 0.7660445, -2.7000003, 6.1, 14)
