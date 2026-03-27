@@ -84,7 +84,7 @@ tracks/0/keys = {
 "args": [ExtResource("12_k2e45"), "[shake]I'll get YOU next time...[/shake]", Color(0.34509805, 0.6392157, 0, 1), -4.0],
 "method": &"nextVoice"
 }, {
-"args": [ExtResource("13_536cc"), "D-Did they say something?", Color(0.34509805, 0, 0, 1), 0.0],
+"args": [ExtResource("13_536cc"), "D-Did they say something?", Color(0.34509805, 0, 0, 1), 6.0],
 "method": &"nextVoice"
 }, {
 "args": [ExtResource("14_aqgau"), "Oh no it's n-nothing...", Color(0, 0, 0, 1), 9.0],
@@ -97,7 +97,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_6vcvc"]
 resource_name = "CoffeeChoice"
-length = 3.0
+length = 4.25
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -105,11 +105,14 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [ExtResource("3_1w6v2"), "Did you feel like trying the coffee? It's pretty good.", Color(0.34509805, 0, 0, 1), 9.0],
 "method": &"nextVoice"
+}, {
+"args": [],
+"method": &"endText"
 }]
 }
 
@@ -306,11 +309,14 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.75),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
-"args": [ExtResource("15_ueoa1"), "Voilla! Neat trick right?", Color(0.34509805, 0, 0, 1), 10.0],
+"args": [ExtResource("15_ueoa1"), "Voilla! Neat trick right?", Color(0.34509805, 0, 0, 1), 15.0],
 "method": &"nextVoice"
+}, {
+"args": [],
+"method": &"endText"
 }]
 }
 
@@ -514,6 +520,20 @@ tracks/8/keys = {
 "method": &"play"
 }]
 }
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"setCanContinue"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ueoa1"]
 resource_name = "OpenEyes"
@@ -643,6 +663,20 @@ tracks/8/keys = {
 "method": &"hide"
 }]
 }
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"setCanContinue"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_h1bgf"]
 length = 0.001
@@ -707,7 +741,7 @@ script = ExtResource("1_21xkr")
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=1957868439]
 stream = ExtResource("2_344ge")
-volume_db = -20.0
+volume_db = -18.0
 autoplay = true
 
 [node name="Voice" type="AudioStreamPlayer" parent="." unique_id=1050584023]

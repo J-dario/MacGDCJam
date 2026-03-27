@@ -19,7 +19,7 @@ var firstChoiceMade = false
 var choice = true
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("LeftClick"):
+	if Input.is_action_just_pressed("LeftClick") and canContinue:
 		animation_player.play()
 
 func nextVoice(audio: AudioStream, text: String, color: Color, volume: float = 0.0) -> void:
@@ -48,6 +48,9 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	elif anim_name == "CoffeeChoice" or anim_name == "TeaChoice":
 		animation_player.play("Burger")
 
+func setCanContinue(state: bool):
+	canContinue = state
+
 func _on_voice_finished() -> void:
 	animation_player.pause()
 	canContinue = true
@@ -75,6 +78,7 @@ func choice2():
 	animation_player.play("TeaChoice")
 	
 func _on_choice_1_pressed() -> void:
+	animation_player.stop()
 	choice_1.hide()
 	choice_2.hide()
 	choice = true
@@ -87,6 +91,7 @@ func _on_choice_1_pressed() -> void:
 	ui_anim.play("OpenEyes")
 
 func _on_choice_2_pressed() -> void:
+	animation_player.stop()
 	choice_1.hide()
 	choice_2.hide()
 	choice = false
