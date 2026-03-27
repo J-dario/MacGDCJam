@@ -43,10 +43,12 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		gameStart = true
 		#animation_player.play("Intro")
 		
-		animation_player.play("TeaChoice")
+		animation_player.play("Contradictions")
 		#animation_player.seek(25, true)
 	elif anim_name == "CoffeeChoice" or anim_name == "TeaChoice":
 		animation_player.play("Burger")
+	elif anim_name == "Burger":
+		animation_player.play("Contradictions")
 
 func setCanContinue(state: bool):
 	canContinue = state

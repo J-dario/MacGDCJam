@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://o4p3bjwyo7r2"]
 
 [ext_resource type="Script" uid="uid://1wwi0keoaqau" path="res://Scripts/main.gd" id="1_21xkr"]
+[ext_resource type="Texture2D" uid="uid://cghev5th8qnar" path="res://2DResources/pngtree-delicious-and-testy-cheese-burger-png-image_13659847.png" id="2_2daye"]
 [ext_resource type="PackedScene" uid="uid://b08tic88yythe" path="res://Scenes/restaurant.tscn" id="2_6bp64"]
 [ext_resource type="AudioStream" uid="uid://tbq156e1d4vw" path="res://Audios/junipersona-walking-in-the-rain-153030 (1).mp3" id="2_344ge"]
 [ext_resource type="AudioStream" uid="uid://d2t0tvre80sgb" path="res://Audios/Date/CoffeeChoice.wav" id="3_1w6v2"]
 [ext_resource type="AudioStream" uid="uid://0lfabgeuwrya" path="res://Audios/Waiter/Hi.mp3" id="3_6vcvc"]
 [ext_resource type="FontFile" uid="uid://dhmcalwcnfnla" path="res://2DResources/Jersey10-Regular.ttf" id="3_344ge"]
+[ext_resource type="AudioStream" uid="uid://b43fe65wsnro4" path="res://Audios/You/HeySo.wav" id="3_o1aky"]
 [ext_resource type="AudioStream" uid="uid://cd3i6k5c860se" path="res://Audios/You/Hi.wav" id="4_344ge"]
 [ext_resource type="AudioStream" uid="uid://oahy4qkin0n6" path="res://Audios/You/Burger.wav" id="4_kltya"]
 [ext_resource type="Shader" uid="uid://da55k7f204jhi" path="res://2DResources/ditherShader.tres" id="4_ynf5e"]
@@ -34,12 +36,34 @@
 [ext_resource type="AudioStream" uid="uid://58rmtrjr2h8q" path="res://Audios/Date/SaySomething.wav" id="13_536cc"]
 [ext_resource type="AudioStream" uid="uid://dhyaxl8iie5m0" path="res://Audios/You/Nothing.mp3" id="14_aqgau"]
 [ext_resource type="AudioStream" uid="uid://cvsfownev2ayp" path="res://Audios/Date/Neat.wav" id="15_ueoa1"]
+[ext_resource type="AudioStream" uid="uid://buspwrnijr3py" path="res://Audios/Date/Wondering.wav" id="16_8cuat"]
 [ext_resource type="AudioStream" uid="uid://be0mfyt4n6bww" path="res://Audios/You/Breathe.wav" id="17_h1bgf"]
 [ext_resource type="AudioStream" uid="uid://bxlvweqnvsy15" path="res://Audios/Cracking.mp3" id="18_fevyy"]
+[ext_resource type="AudioStream" uid="uid://ddyvubt7mgj7" path="res://Audios/Date/UGoFirst.wav" id="18_kwxat"]
+[ext_resource type="AudioStream" uid="uid://dasqojti02txk" path="res://Audios/You/Day.wav" id="19_aa8k8"]
 [ext_resource type="AudioStream" uid="uid://ql3qh303j1vf" path="res://Audios/Shatter.mp3" id="19_hibaj"]
 [ext_resource type="AudioStream" uid="uid://b6lamlyrcxd3e" path="res://Audios/shut_up_ghost-smooth-cold-wind-looped-135538.mp3" id="19_pdsj5"]
+[ext_resource type="AudioStream" uid="uid://s6ntmd82am8b" path="res://Audios/Date/Avg.wav" id="20_kqrg6"]
+[ext_resource type="AudioStream" uid="uid://wjkqtnnn88ek" path="res://Audios/Date/Drive.wav" id="21_nwwfm"]
+[ext_resource type="AudioStream" uid="uid://b1w8eh05706by" path="res://Audios/You/Bus.wav" id="22_jut3y"]
+[ext_resource type="AudioStream" uid="uid://wuyvls7ovr3s" path="res://Audios/Date/Bussing.wav" id="23_v2nl5"]
+[ext_resource type="AudioStream" uid="uid://b4g5lj8uqypcl" path="res://Audios/Date/Normal.wav" id="24_v2nl5"]
 [ext_resource type="AudioStream" uid="uid://u03tfwr22efd" path="res://Audios/You/BreatheOut.wav" id="25_cbgmd"]
+[ext_resource type="AudioStream" uid="uid://qm4qdqmxvk1d" path="res://Audios/Date/Better.wav" id="25_dmskm"]
 [ext_resource type="AudioStream" uid="uid://cci6u8872hetf" path="res://Audios/Unshatter.mp3" id="26_1w6v2"]
+[ext_resource type="AudioStream" uid="uid://c0duruj7n1jvb" path="res://Audios/Waiter/Burg1.mp3" id="26_xdkp6"]
+[ext_resource type="AudioStream" uid="uid://ctokj7meven4p" path="res://Audios/Waiter/Burger2.mp3" id="27_54nrm"]
+[ext_resource type="AudioStream" uid="uid://dpbt0k2fhtou3" path="res://Audios/Waiter/Enjoy.mp3" id="28_55jeb"]
+[ext_resource type="AudioStream" uid="uid://cae23kg5isoho" path="res://Audios/Date/Stuffed.wav" id="29_gsvbx"]
+[ext_resource type="AudioStream" uid="uid://b322bf6v02bi0" path="res://Audios/You/Touched.wav" id="30_bv80c"]
+[ext_resource type="AudioStream" uid="uid://b2qxbkmdskx4e" path="res://Audios/Date/LookingAtIt.wav" id="31_ptfg5"]
+[ext_resource type="AudioStream" uid="uid://chsbplpedchmj" path="res://Audios/Date/Haha.wav" id="33_1semv"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1semv"]
+size = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2060n"]
+albedo_texture = ExtResource("2_2daye")
 
 [sub_resource type="Animation" id="Animation_hpc6h"]
 resource_name = "Burger"
@@ -114,6 +138,127 @@ tracks/0/keys = {
 "args": [],
 "method": &"endText"
 }]
+}
+
+[sub_resource type="Animation" id="Animation_aqgau"]
+resource_name = "Contradictions"
+length = 39.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 4.5, 6, 9.5, 11.5, 13.5, 15.5, 18, 19.5, 20.7, 26, 28, 29.366667, 31.866667, 33.666664, 38, 39),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [ExtResource("16_8cuat"), "Hey I was wondering-", Color(0.34509805, 0, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("18_kwxat"), "Sorry, you go first.", Color(0.34509805, 0, 0, 1), 5.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("19_aa8k8"), "Oh I... was just wondering how your day has been.", Color(0, 0, 0, 1), 9.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("20_kqrg6"), "Oh you know... pretty average...", Color(0.34509805, 0, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("21_nwwfm"), "Driving all the way out here was a pain though.", Color(0.34509805, 0, 0, 1), 4.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("22_jut3y"), "Oh I... thought you took the bus.", Color(0, 0, 0, 1), 9.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("23_v2nl5"), "Oh yeah... I meant bussing all the way out here.", Color(0.34509805, 0, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("24_v2nl5"), "But yeah... just a normal day.", Color(0.34509805, 0, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("25_dmskm"), "Better now that you're here though.", Color(0.34509805, 0, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("26_xdkp6"), "Here you go sir, here's your [shake]big glorbingo belly buster bingo burger[/shake]", Color(0.34509805, 0.6392157, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("27_54nrm"), "And for you here's your \"burger\"...", Color(0.34509805, 0.6392157, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("28_55jeb"), "Enjoy!", Color(0.34509805, 0.6392157, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("29_gsvbx"), "Phew... That was a good meal, I'm stuffed.", Color(0.34509805, 0, 0, 1), 6.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("30_bv80c"), "But...you haven't touched it yet...", Color(0, 0, 0, 1), 6.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("31_ptfg5"), "Oh I mean...It looks like a good meal...I-I'm just stuffed looking at it.", Color(0.34509805, 0, 0, 1), 6.0],
+"method": &"nextVoice"
+}, {
+"args": [ExtResource("33_1semv"), "haha...", Color(0.34509805, 0, 0, 1), 3.0],
+"method": &"nextVoice"
+}, {
+"args": [],
+"method": &"endText"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Voice2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Subtitles2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"show"
+}, {
+"args": [],
+"method": &"hide"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(20.733334, 22.284328),
+"transitions": PackedFloat32Array(1, 4.594795),
+"update": 0,
+"values": [Vector3(0, 20.900002, 0), Vector3(0, 1.0000019, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MeshInstance3D2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(27.633333, 28),
+"transitions": PackedFloat32Array(2.928171, 2.928171),
+"update": 0,
+"values": [Vector3(-6.8, 20.900002, 8.5), Vector3(-6.8, 1.6000004, 8.5)]
 }
 
 [sub_resource type="Animation" id="Animation_fb16x"]
@@ -298,6 +443,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-6.8, 20, 8.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 20, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_7k868"]
 resource_name = "TeaChoice"
@@ -363,6 +532,7 @@ tracks/2/keys = {
 _data = {
 &"Burger": SubResource("Animation_hpc6h"),
 &"CoffeeChoice": SubResource("Animation_6vcvc"),
+&"Contradictions": SubResource("Animation_aqgau"),
 &"FadeFromBlack": SubResource("Animation_fb16x"),
 &"FadeToBlack": SubResource("Animation_6bp64"),
 &"Intro": SubResource("Animation_344ge"),
@@ -739,12 +909,26 @@ _data = {
 [node name="Main" type="Node3D" unique_id=1421159067]
 script = ExtResource("1_21xkr")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=337826950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+mesh = SubResource("QuadMesh_1semv")
+surface_material_override/0 = SubResource("StandardMaterial3D_2060n")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1507358469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 20, 8.5)
+mesh = SubResource("QuadMesh_1semv")
+surface_material_override/0 = SubResource("StandardMaterial3D_2060n")
+
 [node name="BGMusic" type="AudioStreamPlayer" parent="." unique_id=1957868439]
 stream = ExtResource("2_344ge")
 volume_db = -18.0
 autoplay = true
 
 [node name="Voice" type="AudioStreamPlayer" parent="." unique_id=1050584023]
+
+[node name="Voice2" type="AudioStreamPlayer" parent="." unique_id=490328616]
+stream = ExtResource("3_o1aky")
+volume_db = 6.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1162518477]
 libraries/ = SubResource("AnimationLibrary_rsiac")
@@ -800,6 +984,23 @@ color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1495293753]
 
+[node name="Subtitles2" type="RichTextLabel" parent="CanvasLayer" unique_id=455504202]
+visible = false
+z_index = 1
+offset_top = 441.0
+offset_right = 960.0
+offset_bottom = 490.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("3_344ge")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "Hey s-so-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Subtitles" type="RichTextLabel" parent="CanvasLayer" unique_id=811096282]
 visible = false
 z_index = 1
@@ -813,7 +1014,7 @@ theme_override_constants/outline_size = 9
 theme_override_fonts/normal_font = ExtResource("3_344ge")
 theme_override_font_sizes/normal_font_size = 23
 bbcode_enabled = true
-text = "test"
+text = "Hey I was Wondering"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -889,6 +1090,7 @@ stream = ExtResource("25_cbgmd")
 stream = ExtResource("26_1w6v2")
 
 [connection signal="finished" from="Voice" to="." method="_on_voice_finished"]
+[connection signal="finished" from="Voice2" to="." method="_on_voice_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="CanvasLayer/Choice1" to="." method="_on_choice_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/Choice2" to="." method="_on_choice_2_pressed"]

@@ -196,6 +196,9 @@ size = Vector3(300.2, 199.3, 1)
 [node name="coffee" parent="Set" unique_id=1351446101 instance=ExtResource("3_6daie")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
+[node name="Group002" parent="Set/coffee" index="5" unique_id=1827981707]
+visible = false
+
 [node name="Cylinder008" type="MeshInstance3D" parent="Set/coffee" unique_id=719993117]
 transform = Transform3D(-0.48497424, -0.25000006, 0, 0, 0, 0.5722996, -0.28000006, 0.4330127, 0, -2.0016222, -0.6696209, 6.3545437)
 mesh = SubResource("ArrayMesh_j7rwq")
@@ -214,9 +217,6 @@ mesh = SubResource("ArrayMesh_4f614")
 [node name="Cylinder012" type="MeshInstance3D" parent="Set/coffee" unique_id=131052167]
 transform = Transform3D(-0.48497424, -0.25000006, 0, 0, 0, 1, -0.28000006, 0.4330127, 0, -2.0052943, 0.17308864, 6.360416)
 mesh = SubResource("ArrayMesh_qb0ek")
-
-[node name="Group002" parent="Set/coffee" index="8" unique_id=1827981707]
-visible = false
 
 [node name="coffee2" parent="Set" unique_id=1085638098 instance=ExtResource("3_6daie")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -29.9, 0, -38.199997)
